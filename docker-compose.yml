@@ -1,0 +1,86 @@
+
+version: '3.3'
+services:
+
+  web:
+    image: nginx:1.15-alpine
+    restart: always
+    volumes:
+      - ./data/nginx/conf/nginx.conf:/etc/nginx/nginx.conf
+      - ./data/nginx/log:/var/log/nginx
+      - ./data/client_ssr:/usr/share/nginx/html/client_ssr
+      - ./data/admin:/usr/share/nginx/html/admin
+      - ./data/serve:/usr/share/nginx/html/serve
+      - ../nginx-certbot/data/certbot/conf:/etc/letsencrypt
+      - ../nginx-certbot/data/certbot/www:/usr/share/nginx/html/certbot
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - blog-net
+    links:
+      - serve_ghost
+      - ssr_ghost
+    container_name: web
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+
+  ssr_ghost:
+    image: luoshilu/blog_ssr_ghost
+    restart: always
+    ports:
+      - "3000:3000"
+    networks: 
+      - blog-net
+    depends_on:
+      - serve_ghost
+    links: 
+      - serve_ghost
+    volumes:
+      - ./data/client_ssr/.nuxt:/usr/src/ssr/.nuxt
+    container_name: ssr_ghost
+    command: npm run start
+
+  serve_ghost:
+    image: luoshilu/blog_serve_ghost
+    restart: always
+    env_file:
+      - ./blog.env
+    ports: 
+      - "8765:8765"
+    networks:
+      - blog-net
+    volumes:
+      - ./data/serve:/usr/src/serve/www
+    depends_on:
+      - db
+    links: 
+      - db
+    container_name: serve_ghost
+    command: npm run start
+  db:
+    image: mysql
+    command:
+      - --default-authentication-plugin=mysql_native_password
+    restart: always
+    networks:
+      - blog-net
+    ports:
+      - 3306:3306
+    container_name: db
+    environment:
+      MYSQL_DATABASE: blog
+      MYSQL_ROOT_PASSWORD: root123
+    volumes:
+      - ./data/mysql/init:/docker-entrypoint-initdb.d
+      - ./data/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+
+  adminer_mysql:
+    image: adminer
+    restart: always
+    networks:
+      - blog-net
+    ports:
+      - 8088:8080
+networks:
+  blog-net:
+    driver: bridge
