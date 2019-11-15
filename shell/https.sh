@@ -14,6 +14,9 @@ if [ -d "～/nginx-certbot" ];then
   exit 1
 fi
 
+echo "---------- 域名替换 -------"
+sed 's/server_name_temp/'$1'/g' ~/nginx-certbot/data/nginx/app.conf.temp > ~/nginx-certbot/data/nginx/app.conf
+
 echo "---------- init-letsencrypt -------"
 cd ~/nginx-certbot
 source ~/nginx-certbot/init-letsencrypt.sh $1
