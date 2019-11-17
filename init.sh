@@ -16,3 +16,8 @@ source ~/iuo_blog/shell/install-docker.sh
 
 echo "---------- https设置(证书自动发放) -------"
 source ~/iuo_blog/shell/https.sh $1
+
+echo "---------- 启动博客！！ -------"
+cd ~/iuo_blog
+docker-compose up
+echo "---------- 完成启动！！ -------"

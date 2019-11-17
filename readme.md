@@ -12,10 +12,28 @@
 
 # 开始搭建
 进入服务器，执行以下命令
+> cd ~
+
 > git clone https://github.com/luoshilu/iuo_blog.git
 
 > cd iuo_blog
 
 > bash init.sh 你的域名
 
-接下来，你只需稍等片刻，可以去泡一杯咖啡，或者去吃个早餐，回来后，在浏览器输入你的域名，你即看到属于自己博客系统啦。
+接下来，你只需稍等片刻，若有提示，回车即可，接下来，如果你足够幸运的话，一首歌的时间后在浏览器输入你的域名，就能看到属于自己博客啦。
+
+# 一些操作
+## 重启博客
+进入 iuo_blog目录
+> docker-compose down
+
+> docker-compose up
+若首次构建未成功，可尝试重启。
+
+## 修改数据库密码
+在 iuo_blog/blog.env下修改MYSQL_ROOT_PASSWORD，重启博客即可。
+
+## 修改后台管理员密码
+暂时只能去数据里更改，blog/luo_user表，encrypt 设为空，password设为md5(密码)。
+
+

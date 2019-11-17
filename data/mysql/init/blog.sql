@@ -59,9 +59,9 @@ CREATE TABLE `luo_content` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 INSERT INTO `luo_content` (`id`, `title`, `user_id`, `slug`, `thumb`, `category_id`, `status`, `type`, `description`, `markdown`, `content`, `create_time`, `modify_time`, `view`) VALUES
-(9,	'关于',	1,	'about',	NULL,	0,	99,	'page',	'',	'\n> docker-blog,快速构建你的博客呢。\n\n',	'<blockquote>\n<p>docker-blog,快速构建你的博客呢。</p>\n</blockquote>\n',	1523141448,	1573659965,	760),
-(10,	'链接',	1,	'links',	NULL,	0,	99,	'page',	'',	'\n### 友链\n  <ul class=\"flinks\">\n    <li><a href=\"https://asyncc.com/\" target=\"_blank\"> \n       <span>&#127853 </span>IUO 喵喵喵</a> \n    </li>\n</ul>',	'<h3><a id=\"_1\"></a>友链</h3>\n  <ul class=\"flinks\">\n    <li><a href=\"https://asyncc.com/\" target=\"_blank\"> \n       <span>&#127853 </span>IUO 喵喵喵</a> \n    </li>\n</ul>',	1524221547,	1573659724,	773),
-(90,	'hi, 欢迎使用 luo-docker-blog!',	1,	'9319b1ef7a1fd1eac64817b7568a5a41',	NULL,	50,	99,	'post',	'<p>快去管理员后台发布文章吧！</p>\n',	'\n快去管理员后台发布文章吧！\n\n<!--more-->\n\n### 后台地址\n> https://xxxxxx/admin.html\n> 用户名: admin\n> 密码: admin1234\n\n### 数据库\n> http://ip:8088\n> root/root123\n\n> 提示：要导出你的mysql文件做备份哦，本系统还未开启自动备份功能..\n',	'<p>快去管理员后台发布文章吧！</p>\n<!--more-->\n<h3><a id=\"_5\"></a>后台地址</h3>\n<blockquote>\n<p>https://xxxxxx/admin.html<br />\n用户名: admin<br />\n密码: admin1234</p>\n</blockquote>\n<h3><a id=\"_10\"></a>数据库</h3>\n<blockquote>\n<p>http://ip:8088<br />\nroot/root123</p>\n</blockquote>\n<blockquote>\n<p>提示：要导出你的mysql文件做备份哦，本系统还未开启自动备份功能…</p>\n</blockquote>\n',	1573803236,	1573661913,	12);
+(9,	'关于',	1,	'about',	NULL,	0,	99,	'page',	'',	'\n> 这里随便写写好了\n\n',	'<blockquote>\n<p>这里随便写写好了</p>\n</blockquote>\n',	1523170248,	1573840699,	763),
+(10,	'链接',	1,	'links',	NULL,	0,	99,	'page',	'',	'\n### 友链\n  <ul class=\"flinks\">\n    <li><a href=\"https://asyncc.com\" target=\"_blank\"> \n       <span>&#127853 </span>IUO 喵喵喵</a> \n    </li>\n</ul>',	'<h3><a id=\"_1\"></a>友链</h3>\n  <ul class=\"flinks\">\n    <li><a href=\"https://asyncc.com\" target=\"_blank\"> \n       <span>&#127853 </span>IUO 喵喵喵</a> \n    </li>\n</ul>',	1524250347,	1573840713,	775),
+(90,	'hi, 欢迎使用 iuo_blog!',	1,	'9319b1ef7a1fd1eac64817b7568a5a41',	NULL,	50,	99,	'post',	'<p>恭喜你，安装成功。<br />\n快去管理员后台发布文章吧！</p>\n',	'\n恭喜你，安装成功。\n快去管理员后台发布文章吧！\n\n<!--more-->\n\n### 后台地址\n> https://xxxxxx/admin.html\n> 用户名: admin\n> 密码: admin1234\n\n### 数据库\n> http://ip:8088\n> root/root123\n\n> 提示：平时要导出你的mysql文件做备份哦..\n',	'<p>恭喜你，安装成功。<br />\n快去管理员后台发布文章吧！</p>\n<!--more-->\n<h3><a id=\"_6\"></a>后台地址</h3>\n<blockquote>\n<p>https://xxxxxx/admin.html<br />\n用户名: admin<br />\n密码: admin1234</p>\n</blockquote>\n<h3><a id=\"_11\"></a>数据库</h3>\n<blockquote>\n<p>http://ip:8088<br />\nroot/root123</p>\n</blockquote>\n<blockquote>\n<p>提示：平时要导出你的mysql文件做备份哦…</p>\n</blockquote>\n',	1573860836,	1573840657,	14);
 
 DROP TABLE IF EXISTS `luo_demo`;
 CREATE TABLE `luo_demo` (
@@ -149,4 +149,4 @@ CREATE TABLE `luo_visitor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 
--- 2019-11-15 17:01:33
+-- 2019-11-15 18:01:47

@@ -20,8 +20,3 @@ sed 's/server_name_temp/'$1'/g' ~/nginx-certbot/data/nginx/app.conf.temp > ~/ngi
 echo "---------- init-letsencrypt -------"
 cd ~/nginx-certbot
 source ~/nginx-certbot/init-letsencrypt.sh $1
-
-echo "---------- 启动博客！！ -------"
-cd ~/iuo_blog
-docker-compose up  -d
-echo "---------- 完成启动！！ -------"
