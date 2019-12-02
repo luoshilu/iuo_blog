@@ -24,6 +24,15 @@ services:
     container_name: web
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
 
+  admin:
+    image: luoshilu/blog_admin
+    restart: always
+    depends_on:
+      - serve_ghost
+    volumes:
+      - ./data/admin:/usr/src/admin/dist
+    command: /bin/sh -c "yarn run build && tail -f /dev/null"
+
   ssr_ghost:
     image: luoshilu/blog_ssr_ghost
     restart: always
