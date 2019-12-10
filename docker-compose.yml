@@ -25,7 +25,7 @@ services:
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
 
   admin:
-    build: luoshilu/blog_admin
+    image: luoshilu/blog_admin
     depends_on:
       - serve_ghost
     volumes:
