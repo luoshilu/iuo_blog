@@ -29,7 +29,7 @@ services:
     depends_on:
       - serve_ghost
     volumes:
-      - ./data/admin/dist:/usr/src/admin/dist
+      - ./data/admin:/usr/src/admin/dist
     command: /bin/sh -c "yarn run build && tail -f /dev/null"
 
   ssr_ghost:
