@@ -9,7 +9,7 @@ services:
       - ./data/nginx/conf/nginx.conf:/etc/nginx/nginx.conf
       - ./data/nginx/log:/var/log/nginx
       - ./data/client_ssr:/usr/share/nginx/html/client_ssr
-      - ./data/admin:/usr/share/nginx/html/admin
+      - ./data/admin/dist:/usr/share/nginx/html/admin
       - ./data/serve:/usr/share/nginx/html/serve
       - ../nginx-certbot/data/certbot/conf:/etc/letsencrypt
       - ../nginx-certbot/data/certbot/www:/usr/share/nginx/html/certbot
@@ -29,7 +29,7 @@ services:
     depends_on:
       - serve_ghost
     volumes:
-      - ./data/admin:/usr/src/admin/dist
+      - ./data/admin/dist:/usr/src/admin/dist
     command: /bin/sh -c "yarn run build && tail -f /dev/null"
 
   ssr_ghost:
