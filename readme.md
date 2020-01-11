@@ -33,7 +33,5 @@
 ## 修改数据库密码
 在 iuo_blog/blog.env下修改MYSQL_PASSWORD，重启博客即可。
 
-## 修改后台管理员密码
-暂时只能去数据里更改，blog/luo_user表，encrypt 设为空，password设为md5(密码)。
 
 
