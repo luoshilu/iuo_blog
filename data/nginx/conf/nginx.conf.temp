@@ -71,6 +71,9 @@ http {
         ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
         # 前台资源
+        location ~ ^/(favicon.ico) {
+            root /usr/share/nginx/html/serve/static/home/img;
+        }
         rewrite ^/_nuxt/(.+?)$ /.nuxt/dist/client/$1 last;
 
         location ~ ^/(.nuxt)/ {
