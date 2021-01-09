@@ -59,4 +59,6 @@ PING http://cpdd.lol
 ## 修改数据库密码
 修改 iuo_blog/blog.env 的 MYSQL_PASSWORD，重启博客即可。
 
+## 更快的网站性能
+为了使你的网站性能更上一层楼，这里推荐大家使用 [cloudflare](https://dash.cloudflare.com/)。
 
