@@ -33,10 +33,12 @@ PING http://cpdd.lol
 ```
 
 ## 开始搭建
-> cd ~ && apt-get install git
-> git clone https://github.com/luoshilu/iuo_blog.git
-> cd iuo_blog
-> bash init.sh 你的网站域名（如:bash init.sh baidu.com）
+```
+cd ~ && apt-get install git
+git clone https://github.com/luoshilu/iuo_blog.git
+cd iuo_blog
+bash init.sh 你的网站域名（如:bash init.sh baidu.com）
+```
 
 等待 大概 3 分钟左右，在浏览器输入你的域名，新的网站诞生 ～～
 
